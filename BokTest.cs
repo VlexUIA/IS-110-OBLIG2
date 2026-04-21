@@ -8,9 +8,7 @@ namespace IS110OBLIG1.Tests;
 [TestSubject(typeof(Bok))]
 public class BokTest
 {
-    // TEST 1
-    // Tester at SjekkPassord() fungerer riktig
-    // Den skal si JA = riktig passord, NEI = feil passord
+    // TEST 1 - Tester at SjekkPassord() fungerer riktig
     [TestMethod]
     public void SjekkPassord_RiktigOgFeilPassord()
     {
@@ -30,9 +28,7 @@ public class BokTest
         Assert.IsFalse(feil);
     }
 
-    // TEST 2
-    // Tester at boken teller eksemplarer riktig
-    // Starter med 2, går ned til 1 når vi låner ut, tilbake til 2 når vi returnerer
+    // TEST 2 - Tester at boken teller eksemplarer riktig
     [TestMethod]
     public void Bok_LanUtOgReturner()
     {
@@ -53,8 +49,7 @@ public class BokTest
         Assert.AreEqual(2, bok.Tilgjengelige());
     }
 
-    // TEST 3
-    // Vi tester at påmelding og avmelding på kurs fungerer
+    // TEST 3 - Tester at påmelding og avmelding fungerer
     [TestMethod]
     public void Kurs_MeldPaOgMeldAv()
     {

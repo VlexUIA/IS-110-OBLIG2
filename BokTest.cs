@@ -15,16 +15,14 @@ public class BokTest
         // Lag en student med passordet "hemmelig123"
         Student student = new Student("S001", "Narceli", "test@uni.no", "hemmelig123");
 
-        // Sjekk med riktig passord - Skal være true
+        // Riktig passord - Skal være true
+        // Feil passord - Skal være false
         bool riktig = student.SjekkPassord("hemmelig123");
-
-        // Sjekk med feil passord - Skal være false
         bool feil = student.SjekkPassord("feilpassord");
 
         // Assert.IsTrue = "jeg forventer at dette er true"
-        Assert.IsTrue(riktig);
-
         // Assert.IsFalse = "jeg forventer at dette er false"
+        Assert.IsTrue(riktig);
         Assert.IsFalse(feil);
     }
 
@@ -44,8 +42,6 @@ public class BokTest
 
         // Returner boken
         bok.Returner();
-
-        // Nå skal det være 2 ledige igjen
         Assert.AreEqual(2, bok.Tilgjengelige());
     }
 
@@ -58,15 +54,13 @@ public class BokTest
         Kurs kurs = new Kurs("INF101", "Programmering", 10, 30, "F001");
 
         // Meld studenten på kurset
+        // Sjekk om studenten er påmeldt INF101
         kurs.MeldPa(student);
-
-        // Sjekk at "INF101" nå ligger i studentens påmeldte kurs
         Assert.IsTrue(student.PamelteKurs.Contains("INF101"));
 
         // Meld studenten av kurset
-        kurs.MeldAv(student);
-
         // Sjekk at "INF101" ikke lenger er i listen
+        kurs.MeldAv(student);
         Assert.IsFalse(student.PamelteKurs.Contains("INF101"));
     }
 }

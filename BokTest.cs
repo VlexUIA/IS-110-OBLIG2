@@ -58,7 +58,7 @@ public class BokTest
     [TestMethod]
     public void Kurs_MeldPaOgMeldAv()
     {
-        // Lag en student og et kurs
+        // Lag student og kurs
         Student student = new Student("S001", "Narceli", "test@uni.no", "passord");
         Kurs kurs = new Kurs("INF101", "Programmering", 10, 30, "F001");
 
